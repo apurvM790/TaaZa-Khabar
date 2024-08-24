@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import DropDown from "./DropDown";
 
 const Header = ()=>{
     
@@ -15,6 +16,9 @@ const Header = ()=>{
                 <div>
                     <h3 className="font-medium -mr-36">Online Status: {}</h3>
                 </div>
+            </div>
+            <div>
+                    <DropDown />
             </div>
             <div className="flex  h-16 ml-10">
                 <Link to="/"><button className="w-48 rounded-xl border-4 shadow-md px-10 py-1 mx-6 my-3

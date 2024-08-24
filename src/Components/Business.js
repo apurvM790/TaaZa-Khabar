@@ -1,10 +1,16 @@
-import { useState , useEffect} from "react";
+import { useState , useEffect, useContext} from "react";
 import BodyCardComponent from "./BodyCardComponent";
 import Shimmer from "./Shimmer";
+import { API_KEY, NEWS_API } from "../utils/constants";
+import codeContext from "../utils/codeContext";
 
 
 const Business = ()=>{
-    const Api = "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=7b72a73685e044f4a0da0bceec6e8db9";
+    // const Api = "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=7b72a73685e044f4a0da0bceec6e8db9";
+    const { countryCode } = useContext(codeContext);
+
+    const Api = NEWS_API + (countryCode===""?"language=en":"country="+countryCode)+"&category=business"+ API_KEY;
+    console.log(Api);
 
     const [cardData, setCardData] = useState();
 
